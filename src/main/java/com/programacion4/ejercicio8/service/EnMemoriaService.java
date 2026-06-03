@@ -17,12 +17,12 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 @Service
-public class InMemoryUserService implements UserDetailsService {
+public class EnMemoriaService implements UserDetailsService {
 
     private final Map<String, UserModel> users = new ConcurrentHashMap<>();
     private final PasswordEncoder passwordEncoder;
 
-    public InMemoryUserService(PasswordEncoder passwordEncoder) {
+    public EnMemoriaService(PasswordEncoder passwordEncoder) {
         this.passwordEncoder = passwordEncoder;
         // create a default admin and bibliotecario for convenience
         Set<String> adminRoles = new HashSet<>(); adminRoles.add("ROLE_ADMIN");

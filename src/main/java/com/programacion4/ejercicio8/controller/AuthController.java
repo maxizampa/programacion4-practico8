@@ -15,17 +15,17 @@ import com.programacion4.ejercicio8.dto.JwtResponse;
 import com.programacion4.ejercicio8.dto.LoginRequest;
 import com.programacion4.ejercicio8.dto.RegisterRequest;
 import com.programacion4.ejercicio8.security.JwtProvider;
-import com.programacion4.ejercicio8.service.InMemoryUserService;
+import com.programacion4.ejercicio8.service.EnMemoriaService;
 
 @RestController
 @RequestMapping("/api/auth")
 public class AuthController {
 
-    private final InMemoryUserService userService;
+    private final EnMemoriaService userService;
     private final AuthenticationManager authenticationManager;
     private final JwtProvider jwtProvider;
 
-    public AuthController(InMemoryUserService userService, AuthenticationManager authenticationManager, JwtProvider jwtProvider) {
+    public AuthController(EnMemoriaService userService, AuthenticationManager authenticationManager, JwtProvider jwtProvider) {
         this.userService = userService;
         this.authenticationManager = authenticationManager;
         this.jwtProvider = jwtProvider;
